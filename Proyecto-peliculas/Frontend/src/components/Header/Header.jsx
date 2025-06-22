@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-export const Header = ({ onMenuClick }) => (
-    <header className="header">
-        <div className="header-left">
-            <button className="menu-btn" onClick={onMenuClick} aria-label="Abrir menú">
-                <span className="bar"></span>
-                <span className="bar"></span>
-                <span className="bar"></span>
-            </button>
-        </div>
-        <div className="header-center">
-            <span className="titulo">MisPelis</span>
-        </div>
-        <form id="form">
-            <input type="text" className="search" placeholder="Buscar..." />
-        </form>
-    </header>
-);
+export const Header = ({ setBusqueda, onAgregarClick }) => {
+    const [valor, setValor] = useState('');
+
+    const handleBusqueda = (e) => {
+        setValor(e.target.value);
+        setBusqueda(e.target.value);
+    };
+
+    return (
+        <header>
+            <button className="btn-agregar" onClick={onAgregarClick}>+ Agregar</button>
+            <div className="header-titulo-container">
+                <h1 className="titulo">MisPelis</h1>
+            </div>
+            <input
+                type="text"
+                className="search"
+                placeholder="Buscar..."
+                value={valor}
+                onChange={handleBusqueda}
+            />
+        </header>
+    );
+};

@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
 
 :root {
-  --primary-color: #141414;      
-  --secondary-color: #181818;    
-  --accent-color: #e50914;       
-  --text-color: #fff;            
-  --text-muted: #b3b3b3;         
+  --primary-color: #141414;
+  --secondary-color: #181818;
+  --accent-color: #e50914;
+  --text-color: #fff;
+  --text-muted: #b3b3b3;
 }
 
 * {
@@ -19,6 +19,7 @@ body {
   color: var(--text-color);
 }
 
+/* Header */
 header {
   padding: 1rem 2rem;
   display: flex;
@@ -27,13 +28,30 @@ header {
   background-color: var(--secondary-color);
 }
 
-.header-left {
+.btn-agregar {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-right: 2rem;
+}
+.btn-agregar:hover {
+  background: #b0060f;
+}
+
+.header-titulo-container {
+  flex: 1;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .titulo {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: var(--accent-color);
   letter-spacing: 1px;
@@ -47,6 +65,7 @@ header {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   color: var(--text-color);
+  margin-left: 2rem;
 }
 
 .search::placeholder {
@@ -58,22 +77,24 @@ header {
   background-color: #222;
 }
 
+/* Main layout */
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* Tarjeta de película */
 .movie {
   width: 300px;
   margin: 1rem;
   background-color: var(--secondary-color);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-  position: relative;
-  overflow: hidden;
   border-radius: 6px;
-  cursor: pointer;
+  overflow: hidden;
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .movie:hover {
@@ -99,25 +120,106 @@ main {
   font-size: 1.3rem;
 }
 
-.overview {
-  background-color: #181818;
-  color: var(--text-muted);
+.description {
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 1rem 1rem 1rem;
+  min-height: 2.5em;
+  max-height: 3.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Botones de acción */
+.botons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.edit, .delete {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit:hover {
+  background: #b0060f;
+}
+
+.delete {
+  background: #555;
+}
+
+.delete:hover {
+  background: #222;
+}
+
+/* Formulario para agregar/editar película */
+.form-agregar-pelicula {
+  max-width: 500px;
+  width: 90%;
+  margin: 2rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #181818;
   padding: 2rem;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  max-height: 100%;
-  transform: translateY(101%);
-  overflow-y: auto;
-  transition: transform 0.3s ease-in;
-  border-top: 2px solid var(--accent-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  align-items: center;
 }
 
-.movie:hover .overview {
-  transform: translateY(0);
+.form-agregar-pelicula h2 {
+  color: #e50914;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
+.form-agregar-pelicula input,
+.form-agregar-pelicula textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.form-agregar-pelicula textarea {
+  resize: none;
+}
+
+.form-agregar-pelicula button {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 1rem;
+}
+
+.form-agregar-pelicula button:hover {
+  background: #b0060f;
+}
+
+/* Footer */
 footer {
   background-color: var(--secondary-color);
   color: var(--text-color);
@@ -146,142 +248,14 @@ footer {
   color: var(--text-muted);
 }
 
-.menu-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 0.5rem;
-}
-
-.menu-btn .bar {
-  width: 25px;
-  height: 3px;
-  background: var(--accent-color);
-  border-radius: 2px;
-  display: block;
-}
-
-.header-center {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 100%;
-  background: var(--secondary-color);
-  color: var(--text-color);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  padding: 2rem 1rem 1rem 1rem;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
-}
-
-.sidebar.open {
-  transform: translateX(0);
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  color: var(--accent-color);
-  font-size: 2rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
-}
-
-.sidebar-options {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.sidebar-options button {
-  background: var(--secondary-color);
-  color: #fff;
-  padding: 1rem;
-  border-radius: 50px;
-  border: 2px solid var(--accent-color);
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.sidebar-options button:hover {
-  background: var(--accent-color);
-  color: var(--text-color);
-  border: 2px white solid;
-}
-
-/* Formulario para agregar película */
-.form-agregar-pelicula {
-  max-width: 500px;              
-  width: 90%;                 
-  margin: 4rem auto 0 auto;     
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;                     
-  background: #181818;
-  padding: 2.5rem 2rem;         
-  border-radius: 12px;          
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35); 
-  align-items: center;           
-}
-
-.form-agregar-pelicula h2 {
-  color: #e50914;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.form-agregar-pelicula input,
-.form-agregar-pelicula textarea {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid #333;
-  background: #222;
-  color: #fff;
-  font-size: 1.1rem;
-}
-
-.form-agregar-pelicula button {
-  background: #e50914;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 1rem;
-}
-
-.form-agregar-pelicula button:hover {
-  background: #b0060f;
-}
-
+/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(20, 20, 20, 0.85); /* Fondo oscuro semitransparente */
+  background: rgba(20, 20, 20, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -292,38 +266,4 @@ footer {
 @keyframes modalFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-.btn-cerrar {
-  background: #555;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.btn-cerrar:hover {
-  background: #222;
-}
-
-.botones{
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  width: 100%;
-}
-
-.form-agregar-pelicula select {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid #333;
-  background: #222;
-  color: #fff;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
 }
