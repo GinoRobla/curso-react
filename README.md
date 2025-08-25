@@ -6,6 +6,13 @@ En él se construyen 3 aplicaciones web completas utilizando el stack MERN, desa
 
 ---
 
+  ## 🌟 DEMO EN VIVO
+
+  ### 🎬 Catálogo de Películas
+  **Demo en vivo**: [https://curso-react-mauve-omega.vercel.app](https://curso-react-mauve-omega.vercel.app)
+  
+---
+
 📁 Proyectos incluidos
 
 1. **Portafolio Personal (React)**
