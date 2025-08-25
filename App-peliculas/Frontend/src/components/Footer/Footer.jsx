@@ -4,7 +4,7 @@ export const Footer = () => {
     return (
         <footer>
             <div className="footer-content">
-                <a href="https://www.linkedin.com/in/ginorobla" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/gino-robla-803a9337b/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                 </a>
                 &nbsp;|&nbsp;
