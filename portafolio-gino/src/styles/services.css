@@ -1,0 +1,89 @@
+/*
+ * ==================
+ * Services
+ * ==================
+ */
+.service-cards{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+.service-card__box{
+    margin-bottom: 7rem;
+    border: 2px solid #00372b;
+    padding: 1.5rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.service-card__box:hover {
+    transform: translateY(-5px);
+}
+
+.service-card__illustration{
+    display: flex;
+    width: 250px;
+}
+
+.service-card__illustration img{
+    width: 100%;
+    pointer-events: none;
+}
+
+.service-card__title{
+    font-weight: 800;
+    font-size: 2rem;
+    color: #00FF94;
+    margin-top: 2rem;
+}
+
+.service-card__msg{
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.service-card__bg{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #00FF94;
+    z-index: -1;
+    filter: blur(30px);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/*
+ * ========================
+ * Services Responsive Design
+ * ========================
+ */
+
+/*
+ * Medium Screen -- 768px
+ */
+@media only screen and (min-width: 48em) {
+    .service-cards{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .service-card__box{
+        width: 28%;
+        max-width: 350px;
+    }
+    .service-card__illustration{
+        width: 100%;
+        max-width: 150px;
+        height: 150px;
+    }
+}
