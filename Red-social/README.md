@@ -25,7 +25,7 @@ Una aplicación completa de red social desarrollada con Node.js, Express, MongoD
 ### Perfil de Otros Usuarios y Configuraciones
 <div align="center">
   <img src="screenshots/perfilDeUsuario.png" alt="Perfil de Usuario" width="45%" />
-  <img src="screenshots/configuraciones.png" alt="Configuraciones" width="45%" />
+  <img src="screenshots/config.png" alt="Configuraciones" width="45%" />
 </div>
 
 ## Características
